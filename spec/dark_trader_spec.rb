@@ -13,15 +13,15 @@ describe "crypto scrapper" do
     expect(crypto_scrapper(page).length).to be >= 20
   end
 
-  it "should return Bitcoin" do
+  it "should contain Bitcoin" do
     expect(crypto_scrapper(page).any? {|hash| hash.key?("BTC")}).to eq (true)
   end
 
-  it "should return Ethereum" do
+  it "should contain Ethereum" do
     expect(crypto_scrapper(page).any? {|hash| hash.key?("ETH")}).to eq (true)
   end
 
-  it "should return Dogecoin" do
+  it "should contain Dogecoin" do
     expect(crypto_scrapper(page).any? {|hash| hash.key?("DOGE")}).to eq (true)
   end
 end
