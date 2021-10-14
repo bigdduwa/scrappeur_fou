@@ -2,7 +2,7 @@ require 'rubygems'
 require 'nokogiri'
 require 'open-uri' 
 
-page = Nokogiri::HTML(open("https://coinmarketcap.com/all/views/all/"))
+page = Nokogiri::HTML(URI.open("https://coinmarketcap.com/all/views/all/"))
 
 def fetching_names(page)
   crypto_names = page.xpath('//td[@class="cmc-table__cell cmc-table__cell--sortable cmc-table__cell--left cmc-table__cell--hide-sm cmc-table__cell--sort-by__symbol"]/div')
