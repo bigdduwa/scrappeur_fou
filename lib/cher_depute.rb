@@ -6,7 +6,7 @@ page = Nokogiri::HTML(URI.open("https://www2.assemblee-nationale.fr/deputes/list
 
 def get_one_depute(pages)
     array_depute_name = pages.xpath('//*[@id="haut-contenu-page"]/article/div[2]/h1').text.split(" ")
-    hash_one_depute = {'first_name' => array_depute_name[1],'last_name' => array_depute_name[2], 'email' => pages.xpath('//*[@id="haut-contenu-page"]/article/div[3]/div/dl/dd[4]/ul/li[2]/a').text}
+    hash_one_depute = {'first_name' => array_depute_name[1],'last_name' => array_depute_name[2], 'email' => pages.xpath('//*[@id="haut-contenu-page"]/article/div[3]/div/dl/dd[*]/ul/li[2]/a').text}
 return hash_one_depute
 end 
 
