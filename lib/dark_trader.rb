@@ -35,11 +35,10 @@ def array_of_hashes(crypto_names_array, crypto_prices_array)
   end
   return ar
 end
-# puts my_hash=crypto_names_array.zip(crypto_prices_array).to_h
 
-def perform(page)
+def crypto_scrapper(page)
   fetching_names(page)
   fetching_prices(page)
-  puts array_of_hashes(fetching_names(page),fetching_prices(page))
+  return array_of_hashes(fetching_names(page),fetching_prices(page))
 end
-perform(page)
+crypto_scrapper(page)
